@@ -11,6 +11,8 @@ import HelpLayout from "./layouts/HelpLayout";
 import Faq from "./Pages/Faq";
 import Contact from "./Pages/Contact";
 import Error from "./Pages/Error";
+import CareerLayout from "./layouts/CareerLayout";
+import Careers, { dataLoader } from "./Pages/Careers";
 
 function App() {
   const router = createBrowserRouter(
@@ -21,6 +23,9 @@ function App() {
         <Route path="help" element={<HelpLayout />}>
           <Route path="faq" element={<Faq />} />
           <Route path="contact" element={<Contact />} />
+        </Route>
+        <Route path="careers" element={<CareerLayout />}>
+          <Route index element={<Careers />} loader={dataLoader} />
         </Route>
         <Route path="*" element={<Error />} />
       </Route>
