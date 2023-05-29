@@ -19,5 +19,8 @@ export default Careers;
 
 export const dataLoader = async () => {
   const data = await fetch(" http://localhost:4000/careers");
+  if (!data.ok) {
+    throw Error("Requested Page Cant Be Fetched ");
+  }
   return data.json();
 };

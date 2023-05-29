@@ -21,8 +21,11 @@ function Details() {
 
 export default Details;
 
-export const getDetails = async({ params }) => {
+export const getDetails = async ({ params }) => {
   const { id } = params;
   const data = await fetch(`  http://localhost:4000/careers/${id}`);
+  if (!data.ok) {
+    throw Error ("Requested Page Cant Be Fetched ")
+  }
   return data.json();
 };
