@@ -13,6 +13,7 @@ import Contact from "./Pages/Contact";
 import Error from "./Pages/Error";
 import CareerLayout from "./layouts/CareerLayout";
 import Careers, { dataLoader } from "./Pages/Careers";
+import Details, { getDetails } from "./Pages/Details";
 
 function App() {
   const router = createBrowserRouter(
@@ -26,6 +27,7 @@ function App() {
         </Route>
         <Route path="careers" element={<CareerLayout />}>
           <Route index element={<Careers />} loader={dataLoader} />
+          <Route path=":id" element={<Details />} loader={getDetails} />
         </Route>
         <Route path="*" element={<Error />} />
       </Route>

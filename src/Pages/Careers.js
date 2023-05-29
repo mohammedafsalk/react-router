@@ -6,7 +6,7 @@ const Careers = () => {
   return (
     <div className="careers">
       {careers.map((item) => (
-        <Link to="/" key={item.id}>
+        <Link to={item.id.toString()} key={item.id}>
           <p>{item.title}</p>
           <p>Based On {item.location}</p>
         </Link>
