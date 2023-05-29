@@ -10,6 +10,7 @@ import RootLayout from "./layouts/RootLayout";
 import HelpLayout from "./layouts/HelpLayout";
 import Faq from "./Pages/Faq";
 import Contact from "./Pages/Contact";
+import Error from "./Pages/Error";
 
 function App() {
   const router = createBrowserRouter(
@@ -21,6 +22,7 @@ function App() {
           <Route path="faq" element={<Faq />} />
           <Route path="contact" element={<Contact />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Route>
     )
   );
